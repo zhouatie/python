@@ -70,6 +70,40 @@
 
 # fn(1,2,3,4)
 
+# def make_car(a,b,**items):
+# 	obj = {}
+# 	obj['first'] = a;
+# 	obj['last'] = b;
+# 	for key,value in items.items():
+# 		obj[key] = value;
+# 	return obj;
+
+# car = make_car('subaru','oub',color="blue",age="10")
+# print(car)
+# import fn
+# fn.fn(1)
+
+
+# import fn
+# print(fn.arr)
+
+# from fn import printStr,arr
+# printStr(1)
+# for item in arr:
+# 	printStr(item)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
