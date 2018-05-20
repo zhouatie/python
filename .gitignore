@@ -2,3 +2,5 @@ venv/
 *.xml
 *.pyc
 *.iml
+.DS_Store
+.vscode/

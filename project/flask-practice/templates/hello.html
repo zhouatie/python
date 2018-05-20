@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello22</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+这是模板文件中的hello222哦{{ name }}
+<input id="file" type="file">
+<button id="btn">发送</button>
+</body>
+<script>
+    const file = document.getElementById('file');
+    $("#btn").click(function(){
+        var formdata = new FormData();
+        formdata.append('file', file.files[0]);
+
+        $.ajax({
+            url: '/file',
+            type: 'POST',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                console.log(data);
+            }
+        })
+
+    })
+</script>
+</html>
