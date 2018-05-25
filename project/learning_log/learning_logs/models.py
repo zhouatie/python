@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 # 账号 ll_admin
-# 密码 zst843175489
+# 密码 z_s_t_8_4317548_9
 class Topic(models.Model):
     """用户学习的主题"""
     text = models.CharField(max_length=200)
