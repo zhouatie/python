@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # 我的应用程序
     'learning_logs',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -76,14 +77,32 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'localhost',
+        'PORT': '8889',
+        'NAME': 'mysql',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        # 'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        #     },
     }
 }
-
-
+server {
+    listen 80;
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -121,3 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# 我的设置
+LOGIN_URL = '/users/login/'
